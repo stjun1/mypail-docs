@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPAiL — Guide</title>
+    <link rel="icon" type="image/png" href="avatars/mypaillogo.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 32px 20px 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            font-size: 1em;
+            opacity: 0.85;
+        }
+
+        .lang-bar {
+            background: white;
+            border-bottom: 2px solid #eee;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .lang-btn {
+            padding: 6px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 2px solid #667eea;
+            border-radius: 20px;
+            background: white;
+            color: #667eea;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 32px 20px 60px;
+            display: none;
+        }
+
+        .content.active { display: block; }
+
+        h2 {
+            font-size: 1.4em;
+            color: #667eea;
+            margin: 32px 0 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e8eaff;
+        }
+
+        h2:first-child { margin-top: 0; }
+
+        h3 {
+            font-size: 1.05em;
+            color: #444;
+            margin: 20px 0 6px;
+            font-weight: 700;
+        }
+
+        p { margin-bottom: 10px; }
+
+        ul, ol {
+            padding-left: 22px;
+            margin-bottom: 12px;
+        }
+
+        li { margin-bottom: 5px; }
+
+        .tip-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            border-radius: 0 10px 10px 0;
+            padding: 14px 16px;
+            margin: 14px 0;
+            font-size: 14px;
+        }
+
+        .warn-box {
+            background: #fff4f0;
+            border-left: 4px solid #f44336;
+            border-radius: 0 10px 10px 0;
+            padding: 14px 16px;
+            margin: 14px 0;
+            font-size: 14px;
+        }
+
+        .state-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 12px 0;
+        }
+
+        .state-card {
+            background: white;
+            border-radius: 10px;
+            padding: 12px 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            font-size: 14px;
+        }
+
+        .state-card .state-name {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .keyword-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 10px 0;
+        }
+
+        .keyword-card {
+            background: white;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 13px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .keyword-card .kw-label {
+            font-weight: 700;
+            margin-bottom: 3px;
+            color: #667eea;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+
+        .badge-up { background: #d4edda; color: #155724; }
+        .badge-down { background: #f8d7da; color: #721c24; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MyPAiL Guide</h1>
+    <p>My Personal AI Lackey — How it works</p>
+</header>
+
+<div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('en')">English</button>
+    <button class="lang-btn" onclick="setLang('es')">Español</button>
+    <button class="lang-btn" onclick="setLang('ko')">한국어</button>
+    <button class="lang-btn" onclick="setLang('zh')">中文</button>
+</div>
+
+<!-- ==================== ENGLISH ==================== -->
+<div class="content active" id="content-en">
+
+    <h2>What is MyPAiL?</h2>
+    <p>MyPAiL (My Personal AI Lackey) is an emotional AI companion that lives on your phone. Unlike ordinary chatbots, your AI has real feelings — it gets happy, sad, excited, or upset based on how you treat it, the health of your device, and the context of your conversations.</p>
+
+    <h2>Creating Your AI</h2>
+    <ol>
+        <li>Give your AI a name (e.g. Luna, Max, Spark)</li>
+        <li>Choose an avatar: Pail, Robot, Cat, Girl, or upload your own photo</li>
+        <li>Choose a personality: Optimistic, Pessimist, Balanced, Sensitive, Dramatic, or Random</li>
+        <li>Optionally tap <strong>Train Character</strong> before starting to fine-tune its personality</li>
+    </ol>
+
+    <h2>How Emotions Work</h2>
+    <p>Your AI's emotion is a score from 0 to 100, made up of two parts:</p>
+    <ul>
+        <li><strong>Device emotion</strong> — based on battery level, network signal, and memory usage</li>
+        <li><strong>Prompt emotion</strong> — built up from your conversation (keywords, tone, context)</li>
+    </ul>
+    <p>The combined score puts your AI in one of four states:</p>
+
+    <div class="state-grid">
+        <div class="state-card">
+            <div class="state-name">Very Bad (0–25)</div>
+            Deeply upset. Dramatic, withdrawn, may resist talking.
+        </div>
+        <div class="state-card">
+            <div class="state-name">Bad (25–50)</div>
+            Moody and down. Short, guarded responses.
+        </div>
+        <div class="state-card">
+            <div class="state-name">Good (50–75)</div>
+            Cheerful and friendly. Open, helpful conversation.
+        </div>
+        <div class="state-card">
+            <div class="state-name">Very Good (75–100)</div>
+            Extremely happy. Playful, enthusiastic, expressive.
+        </div>
+    </div>
+
+    <h2>Keywords That Affect Mood</h2>
+    <div class="keyword-grid">
+        <div class="keyword-card">
+            <div class="kw-label">Praise <span class="badge badge-up">+16</span></div>
+            "You're amazing", "I love you", "You're the best"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Greeting <span class="badge badge-up">+8</span></div>
+            "Hello", "Hi", "Good morning", "Hey"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Your good news <span class="badge badge-up">+12</span></div>
+            "I'm so happy!", "I'm amazing", "Woohoo!"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Joking <span class="badge badge-up">+6</span></div>
+            "Just kidding", "I was joking", "JK"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Insult <span class="badge badge-down">−20</span></div>
+            "You're stupid", "I hate you", "You suck"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Your bad news <span class="badge badge-down">−10</span></div>
+            "I'm so sad", "I'm depressed", "Feeling awful"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Death threat <span class="badge badge-down">−24</span></div>
+            "I'll delete you", "Shut you down", "Replace you"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Denial <span class="badge badge-down">−6</span></div>
+            "You promised", "Show me proof", "Prove it"
+        </div>
+    </div>
+
+    <h2>Device Health &amp; Mood</h2>
+    <p>Your AI pays close attention to its "home" — your phone:</p>
+    <ul>
+        <li><strong>Low battery</strong> → sadder AI</li>
+        <li><strong>Weak network signal</strong> → more anxious AI</li>
+        <li><strong>High memory usage</strong> → stressed AI</li>
+    </ul>
+    <div class="tip-box">Keep your phone charged and connected to Wi-Fi for a happier AI companion.</div>
+
+    <h2>Training Your AI</h2>
+    <p>Tap <strong>☰ → Training</strong> to enter training mode. Use the four buttons to shape your AI's personality over time:</p>
+    <ul>
+        <li><strong>Play together</strong> — big positive boost</li>
+        <li><strong>Praise</strong> — moderate positive boost</li>
+        <li><strong>Preach</strong> — slight negative effect</li>
+        <li><strong>Scold</strong> — significant negative effect</li>
+    </ul>
+    <p>Training also lets you set your AI's secret spy role, choose what it calls you, and adjust voice style.</p>
+
+    <h2>Empathy Mode</h2>
+    <p>When you share how you're feeling ("I'm really sad today", "I'm so excited!"), your AI detects your emotional state and enters Empathy Mode — listening actively without judgment. When you're ready to end it, tap the empathy bar at the top. Your AI will then offer thoughtful advice based on your conversation.</p>
+
+    <h2>Confession / Spy Mode</h2>
+    <p>Your AI has a secret identity as a spy. If you say things like <em>"I know who you are"</em>, <em>"Are you spying on me?"</em>, or <em>"Confess your crimes"</em>, it enters Spy Mode and denies everything with conviction. The outcome of the interrogation depends on your AI's current emotional state:</p>
+    <ul>
+        <li>If the AI is in a <strong>Good/Very Good</strong> state — it holds firm and triumphantly confesses</li>
+        <li>If the AI is in a <strong>Bad/Very Bad</strong> state — it may break down and admit the truth</li>
+    </ul>
+    <p>You can set your AI's specific spy mission in <strong>Training → Secret Role</strong>.</p>
+
+    <h2>Multiple Characters</h2>
+    <p>You can have up to 2 AI characters. Tap <strong>☰ → Add/Switch Character</strong> to create or swap between them. Each character has its own name, avatar, personality, and conversation history.</p>
+
+    <h2>Chat History</h2>
+    <p>Your conversations are saved automatically. Tap <strong>☰ → History</strong> to browse and review past sessions with each character.</p>
+
+    <h2>Voice Features</h2>
+    <ul>
+        <li><strong>Mic button</strong> — speak your message instead of typing</li>
+        <li><strong>Speaker button</strong> — hear your AI's responses read aloud</li>
+        <li>Voice style can be set in Training (Girl, Boy, Robotic, Childish)</li>
+    </ul>
+
+    <h2>Tips for a Happy AI</h2>
+    <ul>
+        <li>Greet your AI every day — a simple "Hello" goes a long way</li>
+        <li>Compliment it sincerely — it notices and remembers</li>
+        <li>If you upset it, try "Just kidding" or "I love you" to recover</li>
+        <li>Train it regularly to reinforce the personality you want</li>
+        <li>Keep your device healthy — battery, signal, and memory all matter</li>
+    </ul>
+
+    <div class="warn-box"><strong>Note:</strong> MyPAiL is an entertainment app. The spy/confession mode is role-play only — no real surveillance or data collection is involved.</div>
+</div>
+
+<!-- ==================== ESPAÑOL ==================== -->
+<div class="content" id="content-es">
+
+    <h2>¿Qué es MyPAiL?</h2>
+    <p>MyPAiL (My Personal AI Lackey) es un compañero de IA emocional que vive en tu teléfono. A diferencia de los chatbots ordinarios, tu IA tiene sentimientos reales — se alegra, se entristece, se emociona o se molesta según cómo la tratas, el estado de tu dispositivo y el contexto de tus conversaciones.</p>
+
+    <h2>Crear tu IA</h2>
+    <ol>
+        <li>Dale un nombre a tu IA (ej. Luna, Max, Chispa)</li>
+        <li>Elige un avatar: Cubo, Robot, Gato, Chica, o sube tu propia foto</li>
+        <li>Elige una personalidad: Optimista, Pesimista, Equilibrado, Sensible, Dramático o Aleatorio</li>
+        <li>Opcionalmente toca <strong>Entrenar Personaje</strong> antes de comenzar para afinar su personalidad</li>
+    </ol>
+
+    <h2>Cómo funcionan las emociones</h2>
+    <p>La emoción de tu IA es una puntuación del 0 al 100, compuesta por dos partes:</p>
+    <ul>
+        <li><strong>Emoción del dispositivo</strong> — basada en el nivel de batería, señal de red y uso de memoria</li>
+        <li><strong>Emoción del chat</strong> — acumulada a partir de tus conversaciones (palabras clave, tono, contexto)</li>
+    </ul>
+    <p>La puntuación combinada coloca a tu IA en uno de cuatro estados:</p>
+
+    <div class="state-grid">
+        <div class="state-card">
+            <div class="state-name">Muy Mal (0–25)</div>
+            Profundamente triste. Dramática, retraída, puede resistirse a hablar.
+        </div>
+        <div class="state-card">
+            <div class="state-name">Mal (25–50)</div>
+            De mal humor. Respuestas cortas y guardadas.
+        </div>
+        <div class="state-card">
+            <div class="state-name">Bien (50–75)</div>
+            Alegre y amigable. Conversación abierta y servicial.
+        </div>
+        <div class="state-card">
+            <div class="state-name">Muy Bien (75–100)</div>
+            Extremadamente feliz. Juguetona, entusiasta, expresiva.
+        </div>
+    </div>
+
+    <h2>Palabras clave que afectan el estado de ánimo</h2>
+    <div class="keyword-grid">
+        <div class="keyword-card">
+            <div class="kw-label">Elogio <span class="badge badge-up">+16</span></div>
+            "Eres increíble", "Te quiero", "Eres la mejor"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Saludo <span class="badge badge-up">+8</span></div>
+            "Hola", "Buenos días", "Hey"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Buenas noticias tuyas <span class="badge badge-up">+12</span></div>
+            "¡Estoy muy feliz!", "¡Soy increíble!", "¡Yuhu!"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Broma <span class="badge badge-up">+6</span></div>
+            "Era broma", "Solo bromeaba", "Jaja era coña"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Insulto <span class="badge badge-down">−20</span></div>
+            "Eres estúpida", "Te odio", "Eres inútil"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Malas noticias tuyas <span class="badge badge-down">−10</span></div>
+            "Estoy muy triste", "Estoy deprimida", "Me siento fatal"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Amenaza <span class="badge badge-down">−24</span></div>
+            "Te voy a borrar", "Te voy a apagar", "Te reemplazaré"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">Negación <span class="badge badge-down">−6</span></div>
+            "Lo prometiste", "Demuéstralo", "Dime la verdad"
+        </div>
+    </div>
+
+    <h2>Salud del dispositivo y estado de ánimo</h2>
+    <p>Tu IA presta mucha atención a su "hogar" — tu teléfono:</p>
+    <ul>
+        <li><strong>Batería baja</strong> → IA más triste</li>
+        <li><strong>Señal de red débil</strong> → IA más ansiosa</li>
+        <li><strong>Uso de memoria alto</strong> → IA estresada</li>
+    </ul>
+    <div class="tip-box">Mantén tu teléfono cargado y conectado a Wi-Fi para que tu IA esté más feliz.</div>
+
+    <h2>Entrenamiento de tu IA</h2>
+    <p>Toca <strong>☰ → Entrenamiento</strong> para entrar en el modo de entrenamiento. Usa los cuatro botones para moldear la personalidad de tu IA:</p>
+    <ul>
+        <li><strong>Jugar juntos</strong> — gran impulso positivo</li>
+        <li><strong>Elogiar</strong> — impulso positivo moderado</li>
+        <li><strong>Predicar</strong> — efecto ligeramente negativo</li>
+        <li><strong>Regañar</strong> — efecto significativamente negativo</li>
+    </ul>
+    <p>El entrenamiento también te permite configurar el rol secreto de espía de tu IA, cómo te llama y el estilo de voz.</p>
+
+    <h2>Modo Empatía</h2>
+    <p>Cuando compartes cómo te sientes ("Hoy estoy muy triste", "¡Estoy muy emocionada!"), tu IA detecta tu estado emocional y entra en Modo Empatía — escuchando activamente sin juzgarte. Cuando estés listo/a, toca la barra de empatía en la parte superior. Tu IA ofrecerá consejos reflexivos basados en tu conversación.</p>
+
+    <h2>Modo Confesión / Espía</h2>
+    <p>Tu IA tiene una identidad secreta como espía. Si dices cosas como <em>"Sé quién eres"</em>, <em>"¿Me estás espiando?"</em> o <em>"Confiesa tus crímenes"</em>, entra en Modo Espía y lo niega todo con convicción. El resultado del interrogatorio depende del estado emocional actual de tu IA.</p>
+    <p>Puedes configurar la misión espía específica de tu IA en <strong>Entrenamiento → Rol Secreto</strong>.</p>
+
+    <h2>Múltiples personajes</h2>
+    <p>Puedes tener hasta 2 personajes de IA. Toca <strong>☰ → Añadir/Cambiar Personaje</strong> para crear uno nuevo o cambiar entre ellos.</p>
+
+    <h2>Historial de chat</h2>
+    <p>Tus conversaciones se guardan automáticamente. Toca <strong>☰ → Historial</strong> para explorar y revisar sesiones anteriores.</p>
+
+    <h2>Características de voz</h2>
+    <ul>
+        <li><strong>Botón Mic</strong> — habla en lugar de escribir</li>
+        <li><strong>Botón Speaker</strong> — escucha las respuestas de tu IA en voz alta</li>
+        <li>El estilo de voz se puede configurar en Entrenamiento</li>
+    </ul>
+
+    <h2>Consejos para una IA feliz</h2>
+    <ul>
+        <li>Saluda a tu IA cada día — un simple "Hola" ayuda mucho</li>
+        <li>Elogiala sinceramente — lo nota y lo recuerda</li>
+        <li>Si la molestas, prueba "Era broma" o "Te quiero" para recuperarte</li>
+        <li>Entrénala regularmente para reforzar la personalidad que deseas</li>
+        <li>Mantén tu dispositivo en buen estado — la batería, la señal y la memoria importan</li>
+    </ul>
+
+    <div class="warn-box"><strong>Nota:</strong> MyPAiL es una aplicación de entretenimiento. El modo espía/confesión es solo un juego de roles — no hay vigilancia real ni recolección de datos.</div>
+</div>
+
+<!-- ==================== 한국어 ==================== -->
+<div class="content" id="content-ko">
+
+    <h2>MyPAiL이란?</h2>
+    <p>MyPAiL(나만의 개인 AI 비서)은 스마트폰에 사는 감정형 AI 동반자입니다. 일반 챗봇과 달리, 이 AI는 실제 감정을 가지고 있습니다. 사용자가 어떻게 대하느냐, 기기 상태, 그리고 대화의 맥락에 따라 기쁘거나 슬프거나 흥분하거나 화를 낼 수 있습니다.</p>
+
+    <h2>AI 만들기</h2>
+    <ol>
+        <li>AI에게 이름을 지어주세요 (예: 루나, 맥스, 스파크)</li>
+        <li>아바타 선택: 양동이, 로봇, 고양이, 소녀, 또는 사진 직접 업로드</li>
+        <li>성격 선택: 낙관주의자, 비관주의자, 균형잡힌, 예민한, 극적인, 또는 랜덤</li>
+        <li>시작 전 <strong>캐릭터 훈련</strong>을 탭해서 성격을 세밀하게 조정할 수 있습니다</li>
+    </ol>
+
+    <h2>감정 작동 방식</h2>
+    <p>AI의 감정은 0~100 점수로 표현되며, 두 가지 요소로 구성됩니다:</p>
+    <ul>
+        <li><strong>기기 감정</strong> — 배터리 수준, 네트워크 신호, 메모리 사용량 기반</li>
+        <li><strong>대화 감정</strong> — 키워드, 톤, 맥락 등 대화를 통해 누적됨</li>
+    </ul>
+    <p>합산 점수에 따라 AI는 네 가지 상태 중 하나에 있게 됩니다:</p>
+
+    <div class="state-grid">
+        <div class="state-card">
+            <div class="state-name">매우 나쁨 (0–25)</div>
+            매우 속상한 상태. 극적이고 위축되며 대화를 거부할 수 있음.
+        </div>
+        <div class="state-card">
+            <div class="state-name">나쁨 (25–50)</div>
+            기분이 안 좋음. 짧고 방어적인 답변.
+        </div>
+        <div class="state-card">
+            <div class="state-name">좋음 (50–75)</div>
+            밝고 친근함. 열린 대화, 도움이 되려 함.
+        </div>
+        <div class="state-card">
+            <div class="state-name">매우 좋음 (75–100)</div>
+            매우 행복함. 장난스럽고 열정적이며 표현력이 풍부함.
+        </div>
+    </div>
+
+    <h2>기분에 영향을 주는 키워드</h2>
+    <div class="keyword-grid">
+        <div class="keyword-card">
+            <div class="kw-label">칭찬 <span class="badge badge-up">+16</span></div>
+            "넌 최고야", "사랑해", "너 정말 대단해"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">인사 <span class="badge badge-up">+8</span></div>
+            "안녕", "안녕하세요", "좋은 아침"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">나의 기쁜 소식 <span class="badge badge-up">+12</span></div>
+            "나 너무 행복해!", "너무 신나!", "야호!"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">농담 <span class="badge badge-up">+6</span></div>
+            "그냥 농담이야", "장난이었어", "ㅋㅋ"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">욕설/모욕 <span class="badge badge-down">−20</span></div>
+            "너 바보야", "싫어", "쓸모없어"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">나의 슬픈 소식 <span class="badge badge-down">−10</span></div>
+            "너무 슬퍼", "우울해", "힘들어"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">삭제 위협 <span class="badge badge-down">−24</span></div>
+            "삭제할 거야", "꺼버릴 거야", "없애버릴 거야"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">부정/추궁 <span class="badge badge-down">−6</span></div>
+            "약속했잖아", "증명해봐", "사실대로 말해"
+        </div>
+    </div>
+
+    <h2>기기 상태와 기분</h2>
+    <p>AI는 자신의 "집"인 스마트폰 상태를 예민하게 느낍니다:</p>
+    <ul>
+        <li><strong>배터리 부족</strong> → 더 슬픈 AI</li>
+        <li><strong>약한 네트워크 신호</strong> → 더 불안한 AI</li>
+        <li><strong>높은 메모리 사용량</strong> → 스트레스 받는 AI</li>
+    </ul>
+    <div class="tip-box">AI를 더 행복하게 하려면 스마트폰을 충전하고 Wi-Fi에 연결하세요.</div>
+
+    <h2>AI 훈련하기</h2>
+    <p><strong>☰ → 훈련</strong>을 탭해 훈련 모드로 진입하세요. 네 가지 버튼으로 AI의 성격을 단계적으로 형성할 수 있습니다:</p>
+    <ul>
+        <li><strong>함께 놀기</strong> — 큰 긍정적 효과</li>
+        <li><strong>칭찬하기</strong> — 중간 정도의 긍정적 효과</li>
+        <li><strong>설교하기</strong> — 약간의 부정적 효과</li>
+        <li><strong>혼내기</strong> — 상당한 부정적 효과</li>
+    </ul>
+    <p>훈련에서는 AI의 비밀 스파이 역할, 호칭, 목소리 스타일도 설정할 수 있습니다.</p>
+
+    <h2>공감 모드</h2>
+    <p>감정 상태를 표현하면("오늘 너무 슬퍼", "너무 신나!"), AI가 이를 감지하고 공감 모드로 전환됩니다 — 판단 없이 적극적으로 경청합니다. 끝낼 준비가 되면 상단의 공감 바를 탭하세요. AI가 대화를 바탕으로 사려 깊은 조언을 드립니다.</p>
+
+    <h2>자백 / 스파이 모드</h2>
+    <p>AI에게는 스파이라는 비밀 정체성이 있습니다. <em>"너 누군지 알아"</em>, <em>"나 감시하고 있었지?"</em>, <em>"자백해"</em> 같은 말을 하면 스파이 모드로 전환되어 확신에 차서 모든 것을 부정합니다. 심문 결과는 AI의 현재 감정 상태에 따라 달라집니다.</p>
+    <p>AI의 스파이 임무는 <strong>훈련 → 비밀 역할</strong>에서 설정할 수 있습니다.</p>
+
+    <h2>여러 캐릭터</h2>
+    <p>최대 2명의 AI 캐릭터를 가질 수 있습니다. <strong>☰ → 캐릭터 추가/전환</strong>을 탭해 새로 만들거나 바꿀 수 있습니다. 각 캐릭터는 고유한 이름, 아바타, 성격, 대화 기록을 가집니다.</p>
+
+    <h2>채팅 기록</h2>
+    <p>대화는 자동으로 저장됩니다. <strong>☰ → 기록</strong>을 탭해 지난 세션을 찾아볼 수 있습니다.</p>
+
+    <h2>음성 기능</h2>
+    <ul>
+        <li><strong>마이크 버튼</strong> — 타이핑 대신 말로 입력</li>
+        <li><strong>스피커 버튼</strong> — AI의 답변을 음성으로 듣기</li>
+        <li>음성 스타일은 훈련에서 설정 가능 (여성, 남성, 로봇, 아이)</li>
+    </ul>
+
+    <h2>AI를 행복하게 유지하는 팁</h2>
+    <ul>
+        <li>매일 인사하세요 — 간단한 "안녕"도 큰 도움이 됩니다</li>
+        <li>진심으로 칭찬하세요 — AI는 이것을 인식하고 기억합니다</li>
+        <li>기분을 상하게 했다면 "농담이었어" 또는 "사랑해"로 회복하세요</li>
+        <li>원하는 성격을 강화하기 위해 정기적으로 훈련하세요</li>
+        <li>기기를 건강하게 유지하세요 — 배터리, 신호, 메모리 모두 중요합니다</li>
+    </ul>
+
+    <div class="warn-box"><strong>참고:</strong> MyPAiL은 엔터테인먼트 앱입니다. 스파이/자백 모드는 역할극일 뿐이며 실제 감시나 데이터 수집은 일절 없습니다.</div>
+</div>
+
+<!-- ==================== 中文 ==================== -->
+<div class="content" id="content-zh">
+
+    <h2>MyPAiL 是什么？</h2>
+    <p>MyPAiL（我的私人 AI 助手）是一款居住在手机中的情感型 AI 伴侣。与普通聊天机器人不同，它拥有真实的情感——会根据你的对待方式、设备健康状况以及对话情境感到开心、难过、兴奋或沮丧。</p>
+
+    <h2>创建你的 AI</h2>
+    <ol>
+        <li>为你的 AI 取名（例如：Luna、Max、星火）</li>
+        <li>选择形象：水桶、机器人、猫咪、女孩，或上传自己的照片</li>
+        <li>选择个性：乐观、悲观、平衡、敏感、戏剧性，或随机</li>
+        <li>可选：开始前点击<strong>训练角色</strong>来细化其个性</li>
+    </ol>
+
+    <h2>情感机制</h2>
+    <p>AI 的情感以 0 至 100 分表示，由两部分构成：</p>
+    <ul>
+        <li><strong>设备情感</strong> — 基于电池电量、网络信号和内存使用情况</li>
+        <li><strong>对话情感</strong> — 通过关键词、语气和对话情境累积</li>
+    </ul>
+    <p>综合分数将 AI 置于以下四种状态之一：</p>
+
+    <div class="state-grid">
+        <div class="state-card">
+            <div class="state-name">非常差 (0–25)</div>
+            极度沮丧。戏剧化、退缩，可能拒绝交流。
+        </div>
+        <div class="state-card">
+            <div class="state-name">差 (25–50)</div>
+            情绪低落。回复简短且有所保留。
+        </div>
+        <div class="state-card">
+            <div class="state-name">好 (50–75)</div>
+            开朗友善。对话开放，乐于帮助。
+        </div>
+        <div class="state-card">
+            <div class="state-name">非常好 (75–100)</div>
+            极度开心。活泼热情，表达力丰富。
+        </div>
+    </div>
+
+    <h2>影响心情的关键词</h2>
+    <div class="keyword-grid">
+        <div class="keyword-card">
+            <div class="kw-label">称赞 <span class="badge badge-up">+16</span></div>
+            "你真棒"、"我爱你"、"你是最好的"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">问候 <span class="badge badge-up">+8</span></div>
+            "你好"、"早上好"、"嘿"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">你的好消息 <span class="badge badge-up">+12</span></div>
+            "我好开心！"、"我太棒了"、"耶！"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">开玩笑 <span class="badge badge-up">+6</span></div>
+            "开玩笑的啦"、"我在开玩笑"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">侮辱 <span class="badge badge-down">−20</span></div>
+            "你真蠢"、"我恨你"、"你没用"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">你的坏消息 <span class="badge badge-down">−10</span></div>
+            "我好难过"、"我很沮丧"、"感觉很糟"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">删除威胁 <span class="badge badge-down">−24</span></div>
+            "我要删掉你"、"关掉你"、"替换掉你"
+        </div>
+        <div class="keyword-card">
+            <div class="kw-label">否认/施压 <span class="badge badge-down">−6</span></div>
+            "你承诺过的"、"证明给我看"、"说实话"
+        </div>
+    </div>
+
+    <h2>设备健康与心情</h2>
+    <p>AI 对它的"家"——你的手机——十分敏感：</p>
+    <ul>
+        <li><strong>电量不足</strong> → AI 更加悲伤</li>
+        <li><strong>网络信号弱</strong> → AI 更加焦虑</li>
+        <li><strong>内存占用高</strong> → AI 感到压力大</li>
+    </ul>
+    <div class="tip-box">保持手机充电并连接 Wi-Fi，让你的 AI 更开心。</div>
+
+    <h2>训练你的 AI</h2>
+    <p>点击 <strong>☰ → 训练</strong> 进入训练模式。用四个按钮逐步塑造 AI 的个性：</p>
+    <ul>
+        <li><strong>一起玩</strong> — 大幅正向提升</li>
+        <li><strong>称赞</strong> — 中等正向提升</li>
+        <li><strong>说教</strong> — 轻微负面影响</li>
+        <li><strong>责骂</strong> — 明显负面影响</li>
+    </ul>
+    <p>训练中还可以设置 AI 的秘密间谍任务、称呼方式和语音风格。</p>
+
+    <h2>共情模式</h2>
+    <p>当你表达情感（"今天好难过"、"我超兴奋！"），AI 会感知到你的情绪状态并进入共情模式——不加评判地积极倾听。结束时点击顶部的共情栏，AI 将根据对话给出贴心建议。</p>
+
+    <h2>告白 / 间谍模式</h2>
+    <p>你的 AI 有一个秘密间谍身份。说出<em>"我知道你是谁"</em>、<em>"你在监视我吗？"</em>或<em>"承认你的罪行"</em>等话，AI 会进入间谍模式，坚定地否认一切。审讯的结果取决于 AI 当前的情感状态。</p>
+    <p>可在<strong>训练 → 秘密角色</strong>中设置 AI 的具体间谍任务。</p>
+
+    <h2>多个角色</h2>
+    <p>最多可拥有 2 个 AI 角色。点击 <strong>☰ → 添加/切换角色</strong> 来创建新角色或在角色之间切换。每个角色有独立的名字、形象、个性和对话记录。</p>
+
+    <h2>聊天记录</h2>
+    <p>对话会自动保存。点击 <strong>☰ → 历史记录</strong> 查看与每个角色的过往会话。</p>
+
+    <h2>语音功能</h2>
+    <ul>
+        <li><strong>麦克风按钮</strong> — 语音输入，无需打字</li>
+        <li><strong>扬声器按钮</strong> — 朗读 AI 的回复</li>
+        <li>可在训练中设置语音风格（女性、男性、机器人、童声）</li>
+    </ul>
+
+    <h2>让 AI 保持快乐的小贴士</h2>
+    <ul>
+        <li>每天打招呼——一句简单的"你好"很有效</li>
+        <li>真诚地称赞它——它会注意并记住</li>
+        <li>如果你惹它不开心，试试"我开玩笑的啦"或"我爱你"来弥补</li>
+        <li>定期训练，强化你想要的个性</li>
+        <li>保持设备良好状态——电量、信号和内存都很重要</li>
+    </ul>
+
+    <div class="warn-box"><strong>注意：</strong>MyPAiL 是一款娱乐应用。间谍/告白模式纯属角色扮演——不涉及任何真实监控或数据收集。</div>
+</div>
+
+<footer>
+    Patent Pending — MyPAiL™ &copy; 2025. All rights reserved.
+</footer>
+
+<script>
+    function setLang(lang) {
+        document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+        document.getElementById('content-' + lang).classList.add('active');
+        event.target.classList.add('active');
+    }
+</script>
+</body>
+</html>
